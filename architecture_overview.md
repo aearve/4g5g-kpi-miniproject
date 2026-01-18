@@ -2,17 +2,20 @@
 
 ```mermaid
 flowchart LR
-  %% 4G LTE
-  UE4G[UE (4G)] --> eNB[eNodeB]
-  eNB --> MME
-  eNB --> SGW
-  SGW --> PGW
-  PGW --> Internet4G[(Internet)]
 
-  %% 5G
-  UE5G[UE (5G)] --> gNB[gNodeB]
-  gNB --> AMF
-  gNB --> SMF
-  SMF --> UPF
-  UPF --> Internet5G[(Internet)]
+subgraph LTE_4G[4G LTE (E-UTRAN + EPC)]
+  UE4G["UE (Phone)"] --> ENB["eNB"]
+  ENB --> MME["MME (Control Plane)"]
+  ENB --> SGW["SGW"]
+  SGW --> PGW["PGW"]
+  PGW --> INET4G["Internet"]
+end
+
+subgraph NR_5G[5G (NG-RAN + 5G Core)]
+  UE5G["UE (Phone)"] --> GNB["gNB"]
+  GNB --> AMF["AMF (Control Plane)"]
+  GNB --> SMF["SMF"]
+  SMF --> UPF["UPF"]
+  UPF --> INET5G["Internet"]
+end
 
