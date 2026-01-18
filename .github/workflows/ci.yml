@@ -1,0 +1,17 @@
+name: KPI Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  kpi-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run KPI tests
+        run: python3 network_kpi_tests.py
