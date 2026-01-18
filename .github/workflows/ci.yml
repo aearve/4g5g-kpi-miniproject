@@ -14,4 +14,4 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run KPI tests
-        run: python3 network_kpi_tests.py
+        run: python3 scripts/ network_kpi_tests.py
