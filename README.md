@@ -1,14 +1,24 @@
-# 4G/5G Mobile Network Architecture + KPI Mini Project
+# 4G/5G Mobile Network Architecture + KPI Automation
 
-A small learning project exploring **4G LTE vs 5G architecture** and basic 
-**network performance KPIs** using a Python command-line workflow.
+Beginner-friendly telecom learning project that documents 4G vs 5G architecture and runs KPI checks (latency/throughput/packet loss) via an automated Python test script + GitHub Actions CI.
 
-## What’s included
-- High-level 4G vs 5G architecture diagrams (Mermaid)
-- KPI definitions (latency, throughput, load)
-- Python script simulating KPI behavior under load and saving plots
+## Highlights
+- High-level 4G/5G architecture diagram (Mermaid)
+- KPI validation script that generates a pass/fail report from CSV telemetry
+- CI workflow runs tests automatically on push/PR
 
-## How to run
+## Quick start
 ```bash
-python3 network_kpi_sim.py
+python3 scripts/network_kpi_tests.py
+python3 scripts/network_kpi_sim.py
+```
 
+## Docs
+- Architecture: `docs/architecture_overview.md`
+- KPI definitions: `docs/kpi_definitions.md`
+- KPI test report: `docs/report.md`
+- Analysis notes: `docs/analysis.md`
+
+## Outputs
+![Latency under load](assets/latency_under_load.png)
+![Throughput under load](assets/throughput_under_load.png)
